@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: nyc-subway-art
+    env: docker
+    plan: free
+    region: singapore
+    dockerfilePath: ./Dockerfile
+    buildCommand: ""
+    startCommand: ""
