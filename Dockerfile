@@ -29,4 +29,6 @@ RUN chown -R shiny:shiny /srv/shiny-server
 EXPOSE 3838
 
 # 啟動 shiny server
-CMD ["/usr/bin/shiny-server"]
+CMD ["/usr/bin/shiny-server" ]
+
+COPY shiny-server.conf /etc/shiny-server/shiny-server.conf
