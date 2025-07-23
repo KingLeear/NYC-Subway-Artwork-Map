@@ -17,12 +17,17 @@ library(dplyr)
 library(bslib)
 library(stringr)
 library(leaflet)
+library(rvest)
+library(httr)
 
 
 #data import
-mta_art <- read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/refs/heads/main/data/2025/2025-07-22/mta_art.csv")
-station_line <- read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/refs/heads/main/data/2025/2025-07-22/station_lines.csv")
-
+tryCatch({
+  mta_art <- read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/refs/heads/main/data/2025/2025-07-22/mta_art.csv")
+  station_line <- read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/refs/heads/main/data/2025/2025-07-22/station_lines.csv")
+}, error = function(e) {
+  stop("Failed to load data. Please check internet connection and data sources.")
+})
 
 
 
